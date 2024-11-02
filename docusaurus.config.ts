@@ -76,9 +76,31 @@ const config: Config = {
           type: 'docSidebar',
           sidebarId: 'tutorialSidebar',
           position: 'left',
-          label: 'Tutorial',
+          label: 'Tutorial Basic',
         },
-        {to: '/blog', label: 'Blog', position: 'left'},
+        {
+          type: 'docSidebar',
+          sidebarId: 'advanceSidebar',
+          position: 'left',
+          label: 'Tutorial Advance',
+        },
+        {
+          type: 'dropdown',
+          position: 'left',
+          label: 'Community',
+          items: [
+            {
+              label: 'Facebook',
+              href: 'https://www.facebook.com',
+            },
+            {
+              type: 'doc',
+              label: 'Social',
+              docId: 'tutorial-extras/social',
+            },
+          ],
+        },
+        {to: '/blog', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/facebook/docusaurus',
           label: 'GitHub',
