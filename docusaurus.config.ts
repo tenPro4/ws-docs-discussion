@@ -1,7 +1,6 @@
 import {themes as prismThemes} from 'prism-react-renderer';
 import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
-
 const config: Config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
@@ -103,7 +102,7 @@ const config: Config = {
         {to: '/blog', label: 'Blog', position: 'right'},
         {
           href: 'https://github.com/facebook/docusaurus',
-          label: 'GitHub',
+          className: "header-github-link",
           position: 'right',
         },
       ],
