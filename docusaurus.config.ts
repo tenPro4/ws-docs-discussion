@@ -5,8 +5,8 @@ const config: Config = {
   title: 'My Site',
   tagline: 'Dinosaurs are cool',
   favicon: 'img/favicon.ico',
-  url: 'https://tenPro4.github.io',
-  baseUrl: '/ws-docs/',
+  url: 'https://ws-docs-dev.vercel.app',
+  baseUrl: '/',
   organizationName: 'tenPro4', // Usually your GitHub org/user name.
   projectName: 'ws-docs', // Usually your repo name.
   onBrokenLinks: 'throw',
