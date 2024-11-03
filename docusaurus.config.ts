@@ -11,6 +11,9 @@ const config: Config = {
   projectName: 'ws-docs', // Usually your repo name.
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
+  customFields:{
+    mainRedirect:"/docs/tutorial-basics/intro"
+  },
 
   // Even if you don't use internationalization, you can use this field to set
   // useful metadata like html lang. For example, if your site is Chinese, you
@@ -26,13 +29,15 @@ const config: Config = {
       {
         docs: {
           sidebarPath: './sidebars.ts',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
+          showLastUpdateAuthor:true,
+          showLastUpdateTime:true,
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/tenPro4/ws-docs/edit/main/',
         },
         blog: {
           showReadingTime: true,
+          readingTime: ({content, frontMatter, defaultReadingTime}) =>
+            defaultReadingTime({content, options: {wordsPerMinute: 300}}),
           feedOptions: {
             type: ['rss', 'atom'],
             xslt: true,
@@ -40,7 +45,7 @@ const config: Config = {
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/tenPro4/ws-docs/edit/main/',
           // Useful options to enforce blogging best practices
           onInlineTags: 'warn',
           onInlineAuthors: 'warn',
@@ -49,6 +54,7 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
+        
       } satisfies Preset.Options,
     ],
   ],
@@ -64,7 +70,15 @@ const config: Config = {
   ],
 
   themeConfig: {
-    // Replace with your project's social card
+    metadata: [
+      {name: 'keywords', content: 'cooking, blog'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+    ],
+    docs:{
+      sidebar:{
+        hideable:true
+      },
+    },
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
       title: 'My Site',
@@ -72,6 +86,7 @@ const config: Config = {
         alt: 'My Site Logo',
         src: 'img/logo.svg',
       },
+      hideOnScroll:true,
       items: [
         {
           type: 'docSidebar',
@@ -103,7 +118,7 @@ const config: Config = {
         },
         {to: '/blog', label: 'Blog', position: 'right'},
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/tenPro4/ws-docs',
           className: "header-github-link",
           position: 'right',
         },
@@ -147,7 +162,7 @@ const config: Config = {
             },
             {
               label: 'GitHub',
-              href: 'https://github.com/facebook/docusaurus',
+              href: 'https://github.com/tenPro4/ws-docs/',
             },
           ],
         },
