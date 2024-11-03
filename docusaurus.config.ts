@@ -71,6 +71,7 @@ const config: Config = {
   ],
 
   plugins: [
+    'docusaurus-plugin-image-zoom',
     [
       '@docusaurus/plugin-ideal-image',
       {
@@ -192,8 +193,21 @@ const config: Config = {
       copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
     },
     prism: {
-      theme: prismThemes.github,
-      darkTheme: prismThemes.dracula,
+      theme: prismThemes.oneLight,
+      darkTheme: prismThemes.oneDark,
+      additionalLanguages: ['bash', 'json', 'java', 'python', 'php', 'graphql', 'rust', 'toml', 'protobuf', 'diff'],
+      defaultLanguage: 'javascript',
+      magicComments: [
+        {
+          className: 'theme-code-block-highlighted-line',
+          line: 'highlight-next-line',
+          block: { start: 'highlight-start', end: 'highlight-end' },
+        },
+        {
+          className: 'code-block-error-line',
+          line: 'This will error',
+        },
+      ],
     },
   } satisfies Preset.ThemeConfig,
 };
