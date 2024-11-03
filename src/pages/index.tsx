@@ -18,12 +18,13 @@ function HomepageHeader() {
           {siteConfig.title}
         </Heading>
         <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
+        <div className="flex flex-col">
           <Link
-            className="button button--secondary button--lg"
+            className="button button--lg bg-primary"
             to={mainRedirect ?? "/docs/intro"}>
             Docusaurus Tutorial - 5min ⏱️
           </Link>
+          <span className='bg-primary p-4'>Test</span>
         </div>
       </div>
     </header>
